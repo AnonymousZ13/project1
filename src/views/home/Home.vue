@@ -3,9 +3,7 @@
     <nav-bar class="homenav">
       <div slot="center">购物街</div>
     </nav-bar>
-    <h2>{{recommends}}</h2>
-    <h2>-----------</h2>
-    <h2>{{banners}}</h2>
+
   </div>
 </template>
 

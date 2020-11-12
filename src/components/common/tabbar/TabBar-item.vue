@@ -27,7 +27,7 @@ export default {
     //通过传入的颜色决定，组件处于活跃时的颜色。
     activeColor: {
       type: String,
-      default: 'rgb(255, 165, 39)'
+      default: '#E7857A'
     }
   },
   data() {
@@ -69,7 +69,7 @@ export default {
   }
 
   .tab-bar-item img {
-    height:85% ;
+    height:30px ;
     margin-top: 8%;
     
     /* width: 20px; */

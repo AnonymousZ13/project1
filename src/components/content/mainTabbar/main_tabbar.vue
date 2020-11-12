@@ -1,24 +1,25 @@
 <template>
   <div id="main-tab-bar">
     <tab-bar>
-      <tab-bar-item path="/home" activeColor="rgb(255, 165, 39)">
-        <img slot="item-icon" src="~assets/img/imgred3.png" alt="">
-        <img slot="item-icon-active" src="~assets/img/imgyellow1.png" alt="">
+      <!-- path传入tabbar-item的props属性中，用于路由跳转 -->
+      <tab-bar-item path="/home" activeColor="#E7857A">
+        <img slot="item-icon" src="~assets/img/home1.svg" alt="">
+        <img slot="item-icon-active" src="~assets/img/home.svg" alt="">
         <div slot="item-text">首页</div>
       </tab-bar-item>
-      <tab-bar-item path="/catagory" activeColor="rgb(255, 165, 39)">
-        <img slot="item-icon" src="~assets/img/imgred2.png" alt="">
-        <img slot="item-icon-active" src="~assets/img/imgyellow4.png" alt="">
+      <tab-bar-item path="/catagory" activeColor="#E7857A">
+        <img slot="item-icon" src="~assets/img/catagory.svg" alt="">
+        <img slot="item-icon-active" src="~assets/img/catagory1.svg" alt="">
         <div slot="item-text">分类</div>
       </tab-bar-item>
-      <tab-bar-item path="/cart" activeColor="rgb(255, 165, 39)">
-        <img slot="item-icon" src="~assets/img/imgred1.png" alt="">
-        <img slot="item-icon-active" src="~assets/img/imgyellow2.png" alt="">
+      <tab-bar-item path="/cart" activeColor="#E7857A">
+        <img slot="item-icon" src="~assets/img/cart.svg" alt="">
+        <img slot="item-icon-active" src="~assets/img/cart1.svg" alt="">
         <div slot="item-text">购物车</div>
       </tab-bar-item>
-      <tab-bar-item path="/profile" activeColor="rgb(255, 165, 39)">
-        <img slot="item-icon" src="~assets/img/imgred4.png" alt="">
-        <img slot="item-icon-active" src="~assets/img/imgyellow3.png" alt="">
+      <tab-bar-item path="/profile" activeColor="#E7857A">
+        <img slot="item-icon" src="~assets/img/profile.svg" alt="">
+        <img slot="item-icon-active" src="~assets/img/profile1.svg" alt="">
         <div slot="item-text">我的</div>
       </tab-bar-item> 
     </tab-bar>
