@@ -2,7 +2,7 @@
   <div id="hy-swiper">
     <div class="swiper" @touchstart="touchStart" @touchmove="touchMove"
       @touchend="touchEnd">
-      <slot><slot>   
+      <slot></slot>   
     </div>
     <slot name="indicator"></slot>
     <div class="indicator">
@@ -22,18 +22,22 @@
 export default {
   name: "Swiper",
   props: {
+    //多久滚动一张图片
     interval: {
       type: Number,
       default: 3000
     },
+    //轮播延迟时间
     animDuration: {
       type: Number,
       default: 300
     },
+    //滚动比例，手动滚动超过0.25会进入下一张
     moveRatio: {
       type: Number,
       default: 0.25
     },
+    //指示器，图片下方原点，默认显示
     showIndicator: {
       type: Boolean,
       default: true
