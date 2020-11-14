@@ -2,6 +2,7 @@
 
 
 module.exports = {
+  lintOnSave: false,
   configureWebpack: {
     resolve: {
       // alias：配置别名

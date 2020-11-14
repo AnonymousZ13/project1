@@ -9,6 +9,9 @@ export function request(config) {
     timeout: 5000
   })
 
+
+
+
   //2.请求拦截
   // instance.interceptors.request.use(config => {
   //   //处理拦截的数据
