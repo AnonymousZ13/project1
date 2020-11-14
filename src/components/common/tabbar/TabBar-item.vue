@@ -64,25 +64,23 @@ export default {
   .tab-bar-item {
     flex: 1;
     text-align: center;
-    height: 60px;
-    font-size: 12px;
+    height: 70px;
     /* height: 49px; */
   }
 
   .tab-bar-item img {
 
-    width: 25%;
-    margin-top: 15%;
-    margin-bottom: 5%;
+    width: 20%;
+    margin-top: 8%;
     
     /* width: 20px; */
     
   }
   
-  /* .mainItem {
-    height: 50%;
-    width: 100%;
-  } */
+  .mainItem {
+    height: 60%;
+    /* width: 100%; */
+  }
 
   /* .menu {
     color: rgb(244,128,130);

@@ -37,11 +37,12 @@ export default {
     return {
       banners: [],
       recommends: [],
+
       // 用于存放首页tabcontrol下的数据
       goods: {
         'pop': {page: 0, list: []},
-        // 'news': {page: 0, list: []},
-        // 'sell': {page: 0, list: []}
+      //   'news': {page: 0, list: []},
+      //   'sell': {page: 0, list: []}
       }
     }
   },
@@ -60,6 +61,8 @@ export default {
     this.getHomeGoods('pop');
     // this.getHomeGoods('new');
     // this.getHomeGoods('sell');
+
+    // this.getHomeGoods();
   },
   methods: {
     getHomedata(){
@@ -70,13 +73,21 @@ export default {
         this.recommends = msg.data.recommend.list;
       })
     },
+
+
+  //请求商品展示页数据，请求不到，用本地数据代替
     getHomeGoods(type) {
       const page = this.goods[type].page + 1
       getHomeGoods(type, page).then(goodsinf => {
         console.log(goodsinf);
-        // this.goods[type].list.push(...goodsinf.data.list)
+        this.goods[type].list.push(...goodsinf.data.list)
       })
     }
+    // getHomeGoods() {
+    //   getHomeGoods().then(goodsinf => {
+    //     console.log(goodsinf);
+    //   })
+    // }
   }
 }
 </script>
