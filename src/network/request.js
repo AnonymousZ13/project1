@@ -43,16 +43,16 @@ export function request(config) {
 
 
 //封装一个本地请求
-export function localrequest(config) {
-  const locreq = axios.create({
-    baseURL: '/json/'
-  })
+// export function localrequest(config) {
+//   const locreq = axios.create({
+//     baseURL: '/json/'
+//   })
 
-  locreq.interceptors.response.use(res => {
-    return res.data
-  }, err => {
-    console.log(err);
-  })
+//   locreq.interceptors.response.use(res => {
+//     return res.data
+//   }, err => {
+//     console.log(err);
+//   })
 
-  return locreq(config)
-}
+//   return locreq(config)
+// }

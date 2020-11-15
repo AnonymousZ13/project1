@@ -25,10 +25,16 @@ export default {
       currentIndex: 0
     }
   },
-  methods: {
-    //使被选择的组件变色
+  methods: { 
     itemclick(index) {
-      this.currentIndex = index
+      //使被选择的组件变色
+      this.currentIndex = index;
+
+      // 将点击事件传到home.vue里
+      // home.vue通过不同的点击，将不同的数据传入goodslist.vue里
+      //父组件向子组件传递数据用props
+      //子组件向父组件传递用$emit
+      this.$emit('tabclick', index)
     }
   }
 }

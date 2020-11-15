@@ -1,4 +1,4 @@
-import {request, localrequest} from './request'
+import {request} from './request'
 
 export function getHomedata() {
   return request({
@@ -7,19 +7,19 @@ export function getHomedata() {
 }
 
 
-// export function getHomeGoods(type, page) {
-//   return request ({
-//     url: '/home/data',
-//     params: {
-//       type,
-//       page
-//     }
-//   })
-// }
-
-
-export function getHomeGoods() {
-  return localrequest({
-    url: '/data.json'
+export function getHomeGoods(type, page) {
+  return request ({
+    url: '/home/data',
+    params: {
+      type,
+      page
+    }
   })
 }
+
+
+// export function getHomeGoods() {
+//   return localrequest({
+//     url: '/data.json'
+//   })
+// }

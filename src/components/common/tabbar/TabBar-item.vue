@@ -64,8 +64,9 @@ export default {
   .tab-bar-item {
     flex: 1;
     text-align: center;
-    height: 70px;
+    height: 50px;
     /* height: 49px; */
+    font-size: 12px;
   }
 
   .tab-bar-item img {
