@@ -42,3 +42,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  /* #main-tab-bar {
+    height: 50px;
+  } */
+</style>

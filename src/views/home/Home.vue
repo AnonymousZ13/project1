@@ -1,19 +1,16 @@
 <template>
   <div id="home">
     <nav-bar class="homenav"><div slot="center">购物街</div></nav-bar>
-
-    <home-swiper :banners="banners"/>
-  
-    <recommend-view :recommends="recommends" />
-
-    <FeatureView></FeatureView>
-
-    <tabControl :titles="['流行', '新款', '风格']" class="top-control"
-                @tabclick="tabclick" />
     
-    <good-list :goods="showGoods" />
+    <scroll class="content">
+      <home-swiper :banners="banners"/>
+      <recommend-view :recommends="recommends" />
+      <FeatureView></FeatureView>
+      <tabControl :titles="['流行', '新款', '风格']" class="top-control"
+                  @tabclick="tabclick" />
+      <good-list :goods="showGoods" />
+    </scroll>
     
-    <div class="empty"></div>
   </div>
 </template>
 
@@ -24,10 +21,13 @@ import RecommendView from './childComps/RecommendView'
 import FeatureView from './childComps/FeatureView'
 
 import NavBar from 'components/common/navbar/NavBar'
+import Scroll from 'components/common/scroll/Scroll'
 import TabControl from 'components/content/tabControl/TabControl'
 import GoodList from 'components/content/good/GoodList'
 
+
 import {getHomedata, getHomeGoods} from 'network/home'
+
 // import GoodList from '../../components/content/good/GoodList.vue'
 
 // import Swiper from 'components/common/swiper/Swiper'
@@ -66,6 +66,7 @@ export default {
     FeatureView,
     
     NavBar,
+    Scroll,
     TabControl,
     GoodList
   },
@@ -136,8 +137,12 @@ export default {
 
 
 <style scoped>
+/* scoped,里写的属性，只会针对当前 组件起效果 */
   #home {
     padding-top: 44px;
+    /* position: re; */
+    /* vh,适口高度 */
+    height: 100vh;
   }
 
   .homenav {
@@ -162,5 +167,11 @@ export default {
   .top-control {
     position: sticky;
     top: 44px;
+  }
+
+  .content {
+    height: 600px;
+    overflow: hidden; 
+    /* position: absolute; */
   }
 </style>

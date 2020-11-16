@@ -33,5 +33,7 @@ export default {
     flex-wrap: wrap;
     /* 当弹性布局内部盒子宽度不足100%，选择更合适的排列方式，而不是左对齐 */
     justify-content:space-around;
+
+    margin-bottom: 55px;
   }
 </style>
