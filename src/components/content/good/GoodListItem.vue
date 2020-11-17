@@ -1,7 +1,8 @@
 <template>
     <div class="goodsitem">
       <!-- {{goodsItem.show.img}} -->
-        <img :src="goodsItem.show.img" alt="">
+      <!-- @load监听图片加载完成，并调用后面的函数 -->
+        <img :src="goodsItem.show.img" alt="" @load="imageload">
         <div class="goodsinfo">
           <p>{{goodsItem.title}}</p>
           <span class="price">{{'￥' + goodsItem.price}}</span>
@@ -22,6 +23,12 @@ export default {
       default() {
         return []
       }
+    }
+  },
+  methods: {
+    imageload() {
+      // $bus。
+      this.$bus.$emit('itemimageload')
     }
   }
 }

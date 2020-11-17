@@ -5,6 +5,11 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+/**
+ * vue中并未自带$bus方法 ，需要在vue原型上注册
+ */
+Vue.prototype.$bus = new Vue()
+
 new Vue({
   router,
   store,

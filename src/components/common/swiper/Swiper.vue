@@ -1,11 +1,17 @@
 <template>
   <div id="hy-swiper">
+    <!-- 移动端浏览器触摸事件
+            1.touchstart:触摸开始，多点触控
+            2.touchmove: 接触点改变，滑动时
+            3.touchend: 触摸结束时，手指离开屏幕时
+       -->
     <div class="swiper" @touchstart="touchStart" @touchmove="touchMove"
       @touchend="touchEnd">
       <slot></slot>   
     </div>
     <slot name="indicator"></slot>
     <div class="indicator">
+      <!-- v-if后面的条件为false时，对应的元素及其子元素不会被渲染 -->
       <slot name="indicator" v-if="showIndicator && slideCount>1">
         <div v-for="(item, index) in slideCount" class="indi-item" :class="{active:index === currentIndex-1}"
           :key="index">
@@ -52,6 +58,8 @@ export default {
       scrolling: false, //是否正在滚动
     }
   },
+
+  // 生命周期函数，组件被挂载后调用
   mounted: function() {
     //1.操作DOM，在前后添加slide
     setTimeout(() => {
@@ -66,12 +74,18 @@ export default {
      * 定时器操作
      */
     startTimer: function() {
+      // setInterval: 按照指定的周期来调用函数或表达式，直到clearInterval()被调用或窗口被关闭 ，形式像setTimeout,
       this.playTimer = window.setInterval(() =>{
+        //每滚动一张图片，currentindex +1
         this.currentIndex++;
+        //每滚动一张图片计算一次当前位置
         this.scrollContent(-this.currentIndex * this.totalWidth);
+        //interval,多久滚动一张图片，props中的属性，调用setinerval时传入的参数
       }, this.interval)
     },
+
     stopTimer: function() {
+      //停止setInterval方法，即停止计时
       window.clearInterval(this.playTimer);
     },
 
@@ -84,6 +98,7 @@ export default {
 
       //1.开始滚动动画
       this.swiperStyle.transition = 'transform' + this.animDuration + 'ms';
+
       this.setTransform(currentPosition);
 
       //2.判断滚动到的位置
@@ -117,6 +132,7 @@ export default {
      * 设置移动的位置
      */
     setTransform: function(position) {
+      //translate3d(xpx, ypx, zpx)
       this.swiperStyle.transform = `translate3d(${position}px, 0, 0)`;
       this.swiperStyle['-webkit-transform'] = `translate3d(${position}px), 0, 0`;
       this.swiperStyle['-ms-transform'] = `translate3d(${position}px), 0, 0`;
