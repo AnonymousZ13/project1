@@ -58,8 +58,8 @@ export default {
     //绑定路由跳转
     itemclick() {
       this.$router.replace(this.path)
-      console.log(this.isActive);
-      console.log(this.$router);
+      // console.log(this.isActive);
+      // console.log(this.$router);
     }
   }
 }

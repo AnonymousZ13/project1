@@ -1,5 +1,5 @@
 <template>
-    <div class="goodsitem">
+    <div class="goods-item" @click="ItemClick">
       <!-- {{goodsItem.show.img}} -->
       <!-- @load监听图片加载完成，并调用后面的函数 -->
         <img :src="goodsItem.show.img" alt="" @load="imageload">
@@ -26,16 +26,21 @@ export default {
     }
   },
   methods: {
+    //通过 @load监听图片是否加载完成.
     imageload() {
       // $bus。
       this.$bus.$emit('itemimageload')
+    },
+
+    ItemClick() {
+      console.log('ssss');
     }
   }
 }
 </script>
 
 <style scoped>
-  .goodsitem {
+  .goods-item {
     width: 48%;
 
     /* 删除改属性，goodsinfo下的内容会消失 */
@@ -43,7 +48,7 @@ export default {
     z-index: -1;
   }
 
-  .goodsitem img {
+  .goods-item img {
     width: 100%;
     /* height: 85%; */
     border-radius: 5px;
